@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ルーレット抽選アプリ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <p class="badge">Roulette Picker</p>
+      <h1>ルーレット抽選アプリ</h1>
+      <p class="description">
+        項目を入力して、ルーレットでランダムに1つ選べます。
+      </p>
+    </section>
 
+    <section class="layout">
+      <section class="roulette-card">
+        <div class="pointer"></div>
+
+        <div class="wheel-wrap">
+          <canvas id="rouletteCanvas" width="420" height="420"></canvas>
+        </div>
+
+        <button id="spinButton" class="main-button" type="button">
+          ルーレットを回す
+        </button>
+
+        <p id="resultText" class="result-text">結果：---</p>
+        <p id="message" class="message"></p>
+      </section>
+
+      <section class="control-card">
+        <h2>項目を入力</h2>
+
+        <textarea
+          id="itemsInput"
+          placeholder="1行に1つずつ入力してください
+例：
+ラーメン
+カレー
+うどん
+ハンバーガー"
+        ></textarea>
+
+        <div class="button-group">
+          <button id="applyButton" class="sub-button" type="button">
+            反映
+          </button>
+          <button id="saveButton" class="sub-button" type="button">
+            保存
+          </button>
+          <button id="clearButton" class="danger-button" type="button">
+            クリア
+          </button>
+        </div>
+
+        <section class="history-area">
+          <div class="section-title">
+            <h2>履歴</h2>
+            <button id="clearHistoryButton" class="small-danger-button" type="button">
+              履歴削除
+            </button>
+          </div>
+
+          <ul id="historyList"></ul>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
